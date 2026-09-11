@@ -1,0 +1,87 @@
+{
+  "schema": "n-scan-v3",
+  "n_atoms": 100000,
+  "T_s": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "regs": [
+    "reg=0.01",
+    "reg=0.005",
+    "reg=0.001",
+    "reg=0.0005",
+    "reg=0.0001",
+    "reg=0.00005",
+    "reg=0.00001"
+  ],
+  "sigma_x0_m": 3.3650586334763086e-06,
+  "comparisons": [
+    {
+      "T_s": 0.5,
+      "best_reg": "reg=0.00001",
+      "best_F_COM": 0.5799794051043364,
+      "runner_up_reg": "reg=0.00005",
+      "runner_up_F_COM": 0.5247744838725817,
+      "delta_F": 0.05520492123175469,
+      "tied_regs": []
+    },
+    {
+      "T_s": 1.0,
+      "best_reg": "reg=0.0005",
+      "best_F_COM": 0.9999852957516879,
+      "runner_up_reg": "reg=0.001",
+      "runner_up_F_COM": 0.9999568448793001,
+      "delta_F": 2.845087238778632e-05,
+      "tied_regs": []
+    },
+    {
+      "T_s": 1.5,
+      "best_reg": "reg=0.001",
+      "best_F_COM": 0.9999832854196449,
+      "runner_up_reg": "reg=0.00001",
+      "runner_up_F_COM": 0.9999801970960119,
+      "delta_F": 3.0883236329382058e-06,
+      "tied_regs": []
+    },
+    {
+      "T_s": 2.0,
+      "best_reg": "reg=0.005",
+      "best_F_COM": 0.9999986436966357,
+      "runner_up_reg": "reg=0.0001",
+      "runner_up_F_COM": 0.9999983232551297,
+      "delta_F": 3.204415059965271e-07,
+      "tied_regs": []
+    },
+    {
+      "T_s": 2.5,
+      "best_reg": "reg=0.005",
+      "best_F_COM": 0.9999985025460809,
+      "runner_up_reg": "reg=0.001",
+      "runner_up_F_COM": 0.9999960525032181,
+      "delta_F": 2.4500428628115856e-06,
+      "tied_regs": []
+    },
+    {
+      "T_s": 3.0,
+      "best_reg": "reg=0.005",
+      "best_F_COM": 0.9999998334443829,
+      "runner_up_reg": "reg=0.01",
+      "runner_up_F_COM": 0.9999957354172806,
+      "delta_F": 4.0980271023283166e-06,
+      "tied_regs": []
+    }
+  ],
+  "cliff_T_s": {
+    "reg=0.01": 0.5,
+    "reg=0.005": 0.5,
+    "reg=0.001": null,
+    "reg=0.0005": null,
+    "reg=0.0001": null,
+    "reg=0.00005": null,
+    "reg=0.00001": null
+  }
+}

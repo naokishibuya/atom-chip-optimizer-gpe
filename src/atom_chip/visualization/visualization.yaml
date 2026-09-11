@@ -1,0 +1,45 @@
+top: 50
+left: 80
+plots:
+  - layout_3d
+  - potential_1d
+  - potential_2d
+  - potential_3d
+
+layout_3d:
+  function: atom_chip.visualization.layout_3d.plot_layout_3d
+  params:
+    title: Atom Chip Layout
+    size: [7, 6]
+    compute_zorder: false
+    azim: -140  # Azimuth angle
+    elev: 20    # Elevation angle
+    tick: [20, 20, 20]
+
+potential_1d:
+  function: atom_chip.visualization.potential_1d.plot_potential_1d
+  params:
+    size: [7, 6]
+    z_range: [0, 2, 200]  # 100 ticks from 0 to 2
+
+potential_2d:
+  function: atom_chip.visualization.potential_2d.plot_potential_2d
+  params:
+    size: [7, 6]
+    x_range: [-3.0, 3.0, 300]
+    y_range: [-3.0, 3.0, 300]
+    zlim: [0, 6500]
+    isosurface_level: 5
+    quiver: true
+
+potential_3d:
+  function: atom_chip.visualization.potential_3d.plot_potential_3d
+  params:
+    size: [7, 6]
+    x_range: [-3.0, 3.0, 200]
+    y_range: [-3.0, 3.0, 200]
+    z_range: [ 0.2, 0.5, 30]
+    zlim: [0, 6500]
+    elev: 20
+    azim: -65
+    zlim_cap: 3000

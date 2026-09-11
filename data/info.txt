@@ -1,0 +1,41 @@
+Trap Analysis (rb87 on 'BEC Transport'; N-independent)
+
+Atom Species
+----------------------------------------------------------------------------
+Name                              : rb87
+Mass                         [kg] : 1.4432e-25
+Landé g-factor                    : 0.5
+Magnetic quantum number mF        : 2
+s-wave scattering length      [m] : 5.2000e-09
+
+Bias Field Parameters
+----------------------------------------------------------------------------
+Coil factors                [G/A] : [    -1.068        1.8          3]
+Coil currents                 [A] : [         0          0          0]
+Stray fields                  [G] : [         0          0          0]
+
+Magnetic Field Minimum
+----------------------------------------------------------------------------
+Field Minimum                 [G] : 1.3090
+Minimum Location             [mm] : [ 1.072e-07 -3.246e-06     0.3275]
+Larmor frequency            [MHz] : 0.9160
+Trap frequencies             [Hz] : [     109.2      346.6      363.9]
+
+Hessian Eigenvalues and Eigenvectors:
+[     73.23      737.9      813.7]
+|     0.899 -3.377e-06     -0.438|
+|     0.438   9.76e-07      0.899|
+| 2.608e-06          1 -2.357e-06|
+
+Trap Potential Minimum
+----------------------------------------------------------------------------
+Potential Minimum             [J] : 7.4879e-28
+Minimum Location             [mm] : [ 1.502e-07 -3.225e-06     0.3296]
+Larmor frequency            [MHz] : 0.9172
+Trap frequencies             [Hz] : [     110.1      343.3      362.2]
+
+Hessian Eigenvalues and Eigenvectors:
+[ 6.909e-26  6.713e-25  7.474e-25]
+|    0.9013 -2.956e-06    -0.4332|
+|    0.4332  2.663e-07     0.9013|
+| 2.549e-06          1 -1.521e-06|

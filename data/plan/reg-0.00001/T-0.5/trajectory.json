@@ -1,0 +1,109 @@
+{
+  "schema": "trajectory-v1",
+  "hold_convention": "node-centred half-first/full-interior/half-last held waveform",
+  "arrays": {
+    "I_logical_A": {
+      "shape": [
+        1001,
+        15
+      ],
+      "dtype": "float64",
+      "units": "A"
+    },
+    "I_segments_A": {
+      "shape": [
+        1001,
+        73
+      ],
+      "dtype": "float64",
+      "units": "A"
+    },
+    "r_mins_mm": {
+      "shape": [
+        1001,
+        3
+      ],
+      "dtype": "float64",
+      "units": "mm"
+    },
+    "target_rs_mm": {
+      "shape": [
+        1001,
+        3
+      ],
+      "dtype": "float64",
+      "units": "mm"
+    },
+    "U0s_J": {
+      "shape": [
+        1001
+      ],
+      "dtype": "float64",
+      "units": "J"
+    },
+    "omegas_hz": {
+      "shape": [
+        1001,
+        3
+      ],
+      "dtype": "float64",
+      "units": "Hz"
+    },
+    "eigvecs": {
+      "shape": [
+        1001,
+        3,
+        3
+      ],
+      "dtype": "float64",
+      "units": "1"
+    },
+    "a_ho_axes_m": {
+      "shape": [
+        1001,
+        3
+      ],
+      "dtype": "float64",
+      "units": "m"
+    },
+    "larmor_freqs_hz": {
+      "shape": [
+        1001
+      ],
+      "dtype": "float64",
+      "units": "Hz"
+    },
+    "J_conds": {
+      "shape": [
+        1001
+      ],
+      "dtype": "float64",
+      "units": "1"
+    }
+  },
+  "reg": 1e-05,
+  "reg_label": "0.00001",
+  "T_s": 0.5,
+  "control_dt_s": 0.0005,
+  "n_intervals": 1000,
+  "n_nodes": 1001,
+  "scheduler": "smoothstep",
+  "optimizer_args": {
+    "I_max_shifting_A": 3.5,
+    "I_max_guiding_A": 70.0,
+    "wire_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "num_shifts": 6,
+    "destination_offset_mm": [
+      2.4000000000000004,
+      0.0,
+      0.0
+    ]
+  }
+}

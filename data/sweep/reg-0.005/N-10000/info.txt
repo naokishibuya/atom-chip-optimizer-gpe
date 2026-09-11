@@ -1,0 +1,13 @@
+BEC Parameters [N = 10,000] (Harmonic Oscillator Approximation)
+----------------------------------------------------------------------------
+HO Length a_ho               [μm] : 0.6973
+Trap Frequency G-Avg ω_ho [rad/s] : 1503.0779
+
+Non-interacting           [atoms] : 10,000
+Chemical Potential μ0         [J] : 2.7020e-31
+HO Length per axis           [μm] : [     1.028     0.5821     0.5667]
+Critical Temperature         [nK] : 232.5066
+
+Thomas-Fermi              [atoms] : 10,000
+Chemical Potential μ          [J] : 1.3137e-30
+Thomas-Fermi Radii           [μm] : [     6.167      1.978      1.875]

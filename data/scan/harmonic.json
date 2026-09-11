@@ -1,0 +1,327 @@
+{
+  "schema": "harmonic-scan-v2",
+  "model": "gaussian-phase-space",
+  "scope": "interaction-free harmonic surrogate; the mean sector is the Kohn COM dynamics, the covariance channel is a cadence/schedule diagnostic and is not an interacting GPE fidelity",
+  "hold_convention": "node-centred half-first/full-interior/half-last held waveform",
+  "control_dt_s": 0.0005,
+  "arrays": {
+    "reg_values": {
+      "shape": [
+        7
+      ],
+      "dims": [
+        "reg"
+      ],
+      "units": "1",
+      "description": "numeric Tikhonov \u03bb"
+    },
+    "T_grid_s": {
+      "shape": [
+        6
+      ],
+      "dims": [
+        "T"
+      ],
+      "units": "s",
+      "description": "requested transport times"
+    },
+    "end_com_m": {
+      "shape": [
+        7,
+        6,
+        3
+      ],
+      "dims": [
+        "reg",
+        "T",
+        "xyz"
+      ],
+      "units": "m",
+      "description": "signed endpoint COM displacement \u03be(T)"
+    },
+    "end_vel_ms": {
+      "shape": [
+        7,
+        6,
+        3
+      ],
+      "dims": [
+        "reg",
+        "T",
+        "xyz"
+      ],
+      "units": "m/s",
+      "description": "endpoint velocity \u27e8p\u27e9(T)/m (lab; trap held at rest)"
+    },
+    "max_abs_com_m": {
+      "shape": [
+        7,
+        6,
+        3
+      ],
+      "dims": [
+        "reg",
+        "T",
+        "xyz"
+      ],
+      "units": "m",
+      "description": "max_j |\u03be(t_j)| per axis over recorded control-node times"
+    },
+    "max_abs_vel_ms": {
+      "shape": [
+        7,
+        6,
+        3
+      ],
+      "dims": [
+        "reg",
+        "T",
+        "xyz"
+      ],
+      "units": "m/s",
+      "description": "max_j |\u27e8p\u27e9(t_j)/m| per axis over recorded control-node times"
+    },
+    "cov_loss": {
+      "shape": [
+        7,
+        6
+      ],
+      "dims": [
+        "reg",
+        "T"
+      ],
+      "units": "1",
+      "description": "1 - covariance factor of F_G (harmonic, interaction-free)"
+    },
+    "chirp_tr_end": {
+      "shape": [
+        7,
+        6
+      ],
+      "dims": [
+        "reg",
+        "T"
+      ],
+      "units": "1",
+      "description": "endpoint transverse chirp [sym C_rp]/\u0127"
+    },
+    "chirp_tr_max": {
+      "shape": [
+        7,
+        6
+      ],
+      "dims": [
+        "reg",
+        "T"
+      ],
+      "units": "1",
+      "description": "node-sampled max |transverse chirp|"
+    },
+    "l_int_max": {
+      "shape": [
+        7,
+        6
+      ],
+      "dims": [
+        "reg",
+        "T"
+      ],
+      "units": "1",
+      "description": "node-sampled max |internal angular momentum|/\u0127"
+    },
+    "initial_axes": {
+      "shape": [
+        3,
+        3
+      ],
+      "dims": [
+        "xyz",
+        "principal"
+      ],
+      "units": "1",
+      "description": "common initial trap axes V(0), columns"
+    },
+    "initial_omegas_hz": {
+      "shape": [
+        3
+      ],
+      "dims": [
+        "principal"
+      ],
+      "units": "Hz",
+      "description": "common initial trap frequencies"
+    },
+    "final_axes": {
+      "shape": [
+        7,
+        6,
+        3,
+        3
+      ],
+      "dims": [
+        "reg",
+        "T",
+        "xyz",
+        "principal"
+      ],
+      "units": "1",
+      "description": "final trap axes V(T), columns"
+    },
+    "final_omegas_hz": {
+      "shape": [
+        7,
+        6,
+        3
+      ],
+      "dims": [
+        "reg",
+        "T",
+        "principal"
+      ],
+      "units": "Hz",
+      "description": "final trap frequencies (for TF widths)"
+    }
+  },
+  "reg_labels": [
+    "reg=0.01",
+    "reg=0.005",
+    "reg=0.001",
+    "reg=0.0005",
+    "reg=0.0001",
+    "reg=0.00005",
+    "reg=0.00001"
+  ],
+  "reg_values": [
+    0.01,
+    0.005,
+    0.001,
+    0.0005,
+    0.0001,
+    5e-05,
+    1e-05
+  ],
+  "T_s": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "n_nodes": {
+    "reg=0.01": {
+      "0.5": 1001,
+      "1.0": 2001,
+      "1.5": 3001,
+      "2.0": 4001,
+      "2.5": 5001,
+      "3.0": 6001
+    },
+    "reg=0.005": {
+      "0.5": 1001,
+      "1.0": 2001,
+      "1.5": 3001,
+      "2.0": 4001,
+      "2.5": 5001,
+      "3.0": 6001
+    },
+    "reg=0.001": {
+      "0.5": 1001,
+      "1.0": 2001,
+      "1.5": 3001,
+      "2.0": 4001,
+      "2.5": 5001,
+      "3.0": 6001
+    },
+    "reg=0.0005": {
+      "0.5": 1001,
+      "1.0": 2001,
+      "1.5": 3001,
+      "2.0": 4001,
+      "2.5": 5001,
+      "3.0": 6001
+    },
+    "reg=0.0001": {
+      "0.5": 1001,
+      "1.0": 2001,
+      "1.5": 3001,
+      "2.0": 4001,
+      "2.5": 5001,
+      "3.0": 6001
+    },
+    "reg=0.00005": {
+      "0.5": 1001,
+      "1.0": 2001,
+      "1.5": 3001,
+      "2.0": 4001,
+      "2.5": 5001,
+      "3.0": 6001
+    },
+    "reg=0.00001": {
+      "0.5": 1001,
+      "1.0": 2001,
+      "1.5": 3001,
+      "2.0": 4001,
+      "2.5": 5001,
+      "3.0": 6001
+    }
+  },
+  "plan_refs": {
+    "reg=0.01": {
+      "0.5": "plan/reg-0.01/T-0.5/trajectory.npz",
+      "1.0": "plan/reg-0.01/T-1.0/trajectory.npz",
+      "1.5": "plan/reg-0.01/T-1.5/trajectory.npz",
+      "2.0": "plan/reg-0.01/T-2.0/trajectory.npz",
+      "2.5": "plan/reg-0.01/T-2.5/trajectory.npz",
+      "3.0": "plan/reg-0.01/T-3.0/trajectory.npz"
+    },
+    "reg=0.005": {
+      "0.5": "plan/reg-0.005/T-0.5/trajectory.npz",
+      "1.0": "plan/reg-0.005/T-1.0/trajectory.npz",
+      "1.5": "plan/reg-0.005/T-1.5/trajectory.npz",
+      "2.0": "plan/reg-0.005/T-2.0/trajectory.npz",
+      "2.5": "plan/reg-0.005/T-2.5/trajectory.npz",
+      "3.0": "plan/reg-0.005/T-3.0/trajectory.npz"
+    },
+    "reg=0.001": {
+      "0.5": "plan/reg-0.001/T-0.5/trajectory.npz",
+      "1.0": "plan/reg-0.001/T-1.0/trajectory.npz",
+      "1.5": "plan/reg-0.001/T-1.5/trajectory.npz",
+      "2.0": "plan/reg-0.001/T-2.0/trajectory.npz",
+      "2.5": "plan/reg-0.001/T-2.5/trajectory.npz",
+      "3.0": "plan/reg-0.001/T-3.0/trajectory.npz"
+    },
+    "reg=0.0005": {
+      "0.5": "plan/reg-0.0005/T-0.5/trajectory.npz",
+      "1.0": "plan/reg-0.0005/T-1.0/trajectory.npz",
+      "1.5": "plan/reg-0.0005/T-1.5/trajectory.npz",
+      "2.0": "plan/reg-0.0005/T-2.0/trajectory.npz",
+      "2.5": "plan/reg-0.0005/T-2.5/trajectory.npz",
+      "3.0": "plan/reg-0.0005/T-3.0/trajectory.npz"
+    },
+    "reg=0.0001": {
+      "0.5": "plan/reg-0.0001/T-0.5/trajectory.npz",
+      "1.0": "plan/reg-0.0001/T-1.0/trajectory.npz",
+      "1.5": "plan/reg-0.0001/T-1.5/trajectory.npz",
+      "2.0": "plan/reg-0.0001/T-2.0/trajectory.npz",
+      "2.5": "plan/reg-0.0001/T-2.5/trajectory.npz",
+      "3.0": "plan/reg-0.0001/T-3.0/trajectory.npz"
+    },
+    "reg=0.00005": {
+      "0.5": "plan/reg-0.00005/T-0.5/trajectory.npz",
+      "1.0": "plan/reg-0.00005/T-1.0/trajectory.npz",
+      "1.5": "plan/reg-0.00005/T-1.5/trajectory.npz",
+      "2.0": "plan/reg-0.00005/T-2.0/trajectory.npz",
+      "2.5": "plan/reg-0.00005/T-2.5/trajectory.npz",
+      "3.0": "plan/reg-0.00005/T-3.0/trajectory.npz"
+    },
+    "reg=0.00001": {
+      "0.5": "plan/reg-0.00001/T-0.5/trajectory.npz",
+      "1.0": "plan/reg-0.00001/T-1.0/trajectory.npz",
+      "1.5": "plan/reg-0.00001/T-1.5/trajectory.npz",
+      "2.0": "plan/reg-0.00001/T-2.0/trajectory.npz",
+      "2.5": "plan/reg-0.00001/T-2.5/trajectory.npz",
+      "3.0": "plan/reg-0.00001/T-3.0/trajectory.npz"
+    }
+  }
+}

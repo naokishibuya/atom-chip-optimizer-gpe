@@ -1,0 +1,51 @@
+[project]
+name = "atom-chip-optimizer-gpe"
+version = "1.0.0"
+description = "Surrogate-assisted three-dimensional Gross–Pitaevskii characterization of Bose–Einstein condensate transport on an atom chip"
+requires-python = ">=3.12"
+dependencies = [
+    "jax[cuda12]",  # CUDA mandatory: chip init/plan/eval refuse a CPU-only backend (common.ensure_gpu)
+    "matplotlib",
+    "numpy",
+    "optimistix",
+    "pandas",
+    "scipy",
+    "PyQt5",    # Qt backend for the local `chip show` viewer (window positioning)
+    "PyYAML",
+    "tornado",  # webagg backend for the remote `chip show --web` browser viewer
+]
+
+[project.urls]
+Repository = "https://github.com/naokishibuya/atom-chip-optimizer-gpe"
+
+[dependency-groups]
+dev = ["ruff"]  # included by uv sync by default; --no-dev for a lean env
+
+[project.scripts]
+chip = "chip_cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/atom_chip", "src/chip_cli"]
+
+[tool.ruff]
+# Set the maximum line length
+line-length = 180
+
+[tool.ruff.lint]
+# Extra rules beyond ruff defaults
+extend-select = [
+    # enforce line length, except for long URLs in docstrings
+    "E501", "I", "SIM", "UP", "B", "C4", "RET",
+    # enforce type annotations on public functions
+    "ANN001", "ANN002", "ANN003",
+    # trailing whitespace (except for blank lines)
+    "W291", "W293",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# jax.config.update("jax_enable_x64", True) must run before submodule imports
+"src/atom_chip/__init__.py" = ["E402"]
