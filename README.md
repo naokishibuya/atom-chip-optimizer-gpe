@@ -1,5 +1,8 @@
 # 🧲 Atom Chip Optimizer — Surrogate-Assisted GPE
 
+[![arXiv](https://img.shields.io/badge/arXiv-2609.13762-b31b1b.svg)](https://arxiv.org/abs/2609.13762)
+[![DOI](https://img.shields.io/badge/DOI-10.48550%2FarXiv.2609.13762-informational)](https://doi.org/10.48550/arXiv.2609.13762)
+
 > Successor to [atom-chip-optimizer](https://github.com/naokishibuya/atom-chip-optimizer)
 > ([arXiv:2508.11712](https://arxiv.org/abs/2508.11712)), extending the
 > inverse-optimization framework with Gaussian phase-space screening,
@@ -8,13 +11,35 @@
 
 `atom-chip-optimizer-gpe` designs wire-current schedules for BEC transport on an atom chip and characterizes the condensate dynamics. The workflow combines regularized inverse optimization, Gaussian phase-space screening, surrogate-assisted grid sizing, and three-dimensional GPE simulation of selected schedules.
 
-## Prerequisites
+## 📄 Paper
+
+**Surrogate-Assisted three-dimensional Gross–Pitaevskii Characterization of Bose–Einstein condensate transport on an atom chip**  
+Naoki Shibuya (2026)
+
+- Read on arXiv: https://arxiv.org/abs/2609.13762
+- PDF: https://arxiv.org/pdf/2609.13762
+
+### Cite this work
+
+```bibtex
+@misc{shibuya2026surrogate,
+  title         = {Surrogate-assisted three-dimensional {Gross--Pitaevskii} characterization of {Bose--Einstein} condensate transport on an atom chip},
+  author        = {Naoki Shibuya},
+  year          = {2026},
+  eprint        = {2609.13762},
+  archivePrefix = {arXiv},
+  primaryClass  = {cond-mat.quant-gas},
+  doi           = {10.48550/arXiv.2609.13762}
+}
+```
+
+## 📝 Prerequisites
 
 - Install [uv](https://docs.astral.sh/uv/) and Python 3.12 or later.
 - A CUDA GPU is required for `chip init`, `chip plan`, and `chip eval`.
 - `chip scan` and `chip plot` also run on CPU. Set `JAX_PLATFORMS=cpu` to prevent them from initializing the GPU.
 
-## Installation
+## ⚙️ Installation
 
 Clone the repository and install the dependencies recorded in `uv.lock`:
 
@@ -24,7 +49,7 @@ cd atom-chip-optimizer-gpe
 uv sync --locked
 ```
 
-## Included data
+## ✨ Included data
 
 The `data/` directory contains the chip configuration, planned current schedules, surrogate scans, and saved GPE and linear evaluation results used for the paper. Numerical arrays and metadata are included; generated figures and logs are omitted.
 
@@ -42,7 +67,7 @@ JAX_PLATFORMS=cpu uv run chip plot data/sweep/reg-0.005/N-1000/T-2.0
 
 Use a separate experiment directory for new calculations so that the bundled results remain unchanged.
 
-## Run a new experiment
+## 🚀 Run a new experiment
 
 From the repository root, create an experiment directory and initialize it:
 
@@ -64,7 +89,7 @@ uv run chip plot                                # generate figures from saved da
 
 See `uv run chip <command> --help` for defaults, accepted syntax (space-separated values, `START:STOP:STEP` ranges, scientific notation), and units.
 
-## Data Directory Structure
+## 🗂️ Data Directory Structure
 
 Both `data/` and newly created experiment directories use this structure.
 
@@ -94,6 +119,6 @@ data/
 - NPZ files store numerical arrays, while JSON files store configuration, metadata, and result summaries.
 - Experiment commands write logs alongside their outputs, and `chip plot` generates figures in `figures/` subdirectories.
 
-## License
+## 🙏 Credit
 
-This repository is licensed under the [Apache License 2.0](LICENSE).
+This work extends the author's MSc thesis at the University of Sussex. The original atom-chip MATLAB trap model was provided by Dr Fedja Oručević and the Quantum Systems and Devices laboratory at the University of Sussex.
